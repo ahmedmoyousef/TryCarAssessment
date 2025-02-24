@@ -49,6 +49,7 @@ The project follows a **modular architecture**, with clear separation of concern
 
 - **Swift 6**
 - **Xcode 16.2**
+- **SwiftUI** for building the app's UI, following Apple's modern recommended approach
 - **Combine Framework** (for declarative and reactive programming)
 
 ## Benefits of Using Combine
