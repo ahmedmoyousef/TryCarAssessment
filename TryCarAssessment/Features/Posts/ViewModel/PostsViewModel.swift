@@ -15,7 +15,7 @@ class PostsViewModel {
     private(set) var isLoading: Bool = false
     
     private let apiService: APIServiceProtocol
-    private let persistenceManager: PersistenceManager
+    private let persistenceManager: PersistenceManagerProtocol
     private let networkManager: NetworkManager
     var isConnected: Bool {
         return networkManager.isConnected
@@ -23,7 +23,7 @@ class PostsViewModel {
     var paths: [PostsPath] = []
     
     init(apiService: APIServiceProtocol = APIService(),
-         persistenceManager: PersistenceManager = .shared,
+         persistenceManager:PersistenceManagerProtocol = PersistenceManager.shared,
          networkManager: NetworkManager = .shared
     ) {
         self.apiService = apiService

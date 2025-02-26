@@ -7,7 +7,17 @@
 
 import CoreData
 
-class PersistenceManager {
+protocol PersistenceManagerProtocol {
+    func savePosts(_ posts: [Post]) async throws
+    func fetchPosts() async throws -> [Post]
+    func fetchFavorites() async throws -> [Post]
+    func removeFavorite(postId: Int) async throws
+    func addFavorite(_ post: Post) async throws
+    func isPostFavorite(postId: Int) async throws -> Bool
+}
+
+
+class PersistenceManager: PersistenceManagerProtocol {
     static let shared = PersistenceManager()
     
     private let context: NSManagedObjectContext
